@@ -1,0 +1,200 @@
+{
+  "pizzas":[
+    {
+      "name": "Margherita",
+      "ingredients": []
+    },
+    {
+      "name": "Hawaiian",
+      "ingredients": [
+        "Ham",
+        "Pineapple"
+      ]
+    },
+    {
+      "name": "Bacon Crispy",
+      "ingredients": [
+        "Ham",
+        "Chicken",
+        "Bacon"
+      ]
+    },
+    {
+      "name": "American",
+      "ingredients": [
+        "Frankfurt",
+        "Bacon",
+        "Egg"
+      ]
+    },
+    {
+      "name": "Traviata",
+      "ingredients": [
+        "Onion",
+        "Bacon",
+        "Sausage"
+      ]
+    },
+    {
+      "name": "Burger",
+      "ingredients": [
+        "Miniburgers",
+        "Bacon",
+        "Egg",
+        "Onion"
+      ]
+    },
+    {
+      "name": "Castellera",
+      "ingredients": [
+        "Onion",
+        "Tuna",
+        "Pepperoni",
+        "Olives"
+      ]
+    },
+    {
+      "name": "Cowboy",
+      "ingredients": [
+        "BBQ Sauce",
+        "Cheddar",
+        "Roquefort",
+        "Bacon"
+      ]
+    },
+    {
+      "name": "Texas",
+      "ingredients": [
+        "BBQ Sauce",
+        "Onion",
+        "Chicken",
+        "Tomato Slices"
+      ]
+    },
+    {
+      "name": "Coast",
+      "ingredients": [
+        "Tuna",
+        "Anchovies",
+        "Prawns",
+        "Pineapple"
+      ]
+    },
+    {
+      "name": "BBQ",
+      "ingredients": [
+        "BBQ Sauce",
+        "Beef",
+        "Bacon",
+        "Chicken"
+      ]
+    },
+    {
+      "name": "Diablo",
+      "ingredients": [
+        "Ham",
+        "Beef",
+        "Bacon",
+        "Chicken"
+      ]
+    },
+    {
+      "name": "Carbonara",
+      "ingredients": [
+        "Carbonara sauce",
+        "Onion",
+        "Mushrooms",
+        "Bacon"
+      ]
+    },
+    {
+      "name": "Spanish",
+      "ingredients": [
+        "Jamon Serrano",
+        "Brie",
+        "Olives",
+        "Mushrooms"
+      ]
+    },
+    {
+      "name": "4 Cheeses",
+      "ingredients": [
+        "Mozzarella",
+        "Emmental",
+        "Roquefort",
+        "Cheddar"
+      ]
+    },
+    {
+      "name": "Pepperoni",
+      "ingredients": [
+        "Pepperoni",
+        "Ham",
+        "Beef",
+        "Bacon"
+      ]
+    },
+    {
+      "name": "Vegetal",
+      "ingredients": [
+        "Onion",
+        "Bell Pepper",
+        "Tomato Slices",
+        "Artichoke",
+        "Mushrooms"
+      ]
+    },
+    {
+      "name": "6 Cheeses",
+      "ingredients": [
+        "Mozarella",
+        "Goat Cheese",
+        "Brie",
+        "Emmental",
+        "Roquefort",
+        "Cheddar"
+      ]
+    },
+    {
+      "name": "Mallorca",
+      "ingredients": [
+        "Goat Cheese",
+        "Emmental",
+        "Cheddar",
+        "Brie",
+        "Sobrasada",
+        "Olives"
+      ]
+    },
+    {
+      "name": "Carbonara Deluxe",
+      "ingredients": [
+        "Carbonara Sauce",
+        "Bacon",
+        "Onion",
+        "Mushrooms",
+        "Goat Cheese",
+        "Honey"
+      ]
+    }
+  ],
+  "crust": [
+    "Original",
+    "Thin",
+    "Sicilian"
+  ],
+  "beverages": [
+    {
+      "name": "Water",
+      "minAge": "0"
+    },
+    {
+      "name": "Soda",
+      "minAge": "0"
+    },
+    {
+      "name": "Beer",
+      "minAge": "18"
+    }
+  ]
+}
