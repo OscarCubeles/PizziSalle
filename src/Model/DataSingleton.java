@@ -1,8 +1,13 @@
 package Model;
 
+import Model.Entity.Drink;
 import Model.Entity.Menu;
+import Model.Entity.Pizza;
+import Model.Proxy.ProxyFile;
 
-/*
+import java.util.LinkedList;
+
+/**
     PATTERN: Singleton
  */
 public class DataSingleton {
@@ -15,17 +20,29 @@ public class DataSingleton {
     }
 
     public static DataSingleton getInstance() {
-
-        // create object if it's not already created
-        if(dbObject == null) {
-            dbObject = new DataSingleton(); // pillar el object de la proxy
+         if(dbObject == null) {
+            dbObject = new DataSingleton();
         }
-
-        // returns the singleton object
         return dbObject;
     }
 
-    public void getConnection() {
-        System.out.println("You are now connected to the database.");
+    public Menu getData() {
+        return data;
+    }
+
+    public LinkedList<Pizza> getPizzas(){
+        return data.getPizzas();
+    }
+
+    public LinkedList<Drink> getDrinks(){
+        return data.getBeverages();
+    }
+
+    public LinkedList<String> getCrusts(){
+        return data.getCrust();
+    }
+
+    public LinkedList<String> getIngredients(){
+        return data.getIngredients();
     }
 }

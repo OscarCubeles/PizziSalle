@@ -1,34 +1,38 @@
+import Model.Composite.CompositeOrder;
 import Model.DataSingleton;
+import Model.Entity.Drink;
 import Model.Entity.Pizza;
+import Model.Iterator.CrustRepository;
+import Model.Iterator.DrinkRepository;
+import Model.Iterator.Iterator;
+import Model.Iterator.PizzaRepository;
 import Model.ModelManager;
 import View.MainFrame;
-import com.google.gson.Gson;
 
 import javax.swing.*;
-import javax.xml.crypto.Data;
-import java.io.FileNotFoundException;
-import java.io.FileReader;
-import java.io.IOException;
-import java.io.Reader;
-import java.lang.reflect.Type;
 
 public class Main {
-    public static void main(String[] args) throws FileNotFoundException {
+    public static void main(String[] args) {
 
-        DataSingleton ds = DataSingleton.getInstance();
+        ModelManager m = new ModelManager();
+        Pizza pizza1 = new Pizza("hola");
+        Pizza pizza2 = new Pizza("hol1");
+        Pizza pizza3 = new Pizza("hol3");
+
+        CompositeOrder compositeOrder = new CompositeOrder();
+        compositeOrder.add(pizza1);
+        compositeOrder.add(pizza2);
+        compositeOrder.add(pizza3);
+
+        CompositeOrder compositeOrder1 = new CompositeOrder();
+        compositeOrder1.add(new Drink("Monster"));
+        compositeOrder.add(compositeOrder1);
+        compositeOrder.print();
 
 
-
-        SwingUtilities.invokeLater(new Runnable() {
-            @Override
-            public void run() {
-
-
-                MainFrame view = new MainFrame();
-
-
-                view.setVisible(true);
-            }
+        SwingUtilities.invokeLater(() -> {
+            MainFrame view = new MainFrame();
+            view.setVisible(true);
         });
     }
 

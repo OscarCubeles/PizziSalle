@@ -1,8 +1,8 @@
-package Model;
+package Model.Proxy;
 
 import Model.Entity.Menu;
 
-/*
+/**
     PATTERN: Proxy file
  */
 public interface DataFile {

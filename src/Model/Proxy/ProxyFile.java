@@ -1,8 +1,8 @@
-package Model;
+package Model.Proxy;
 
 import Model.Entity.Menu;
 
-/*
+/**
     PATTERN: Proxy ProxyFile
  */
 public class ProxyFile implements DataFile {

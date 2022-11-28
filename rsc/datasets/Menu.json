@@ -7,174 +7,408 @@
     {
       "name": "Hawaiian",
       "ingredients": [
-        "Ham",
-        "Pineapple"
+        {
+          "name": "Ham",
+          "amount": 1
+        },
+        {
+          "name": "Pineapple",
+          "amount": 1
+        }
       ]
     },
     {
       "name": "Bacon Crispy",
       "ingredients": [
-        "Ham",
-        "Chicken",
-        "Bacon"
+        {
+          "name": "Ham",
+          "amount": 1
+        },
+        {
+          "name": "Chicken",
+          "amount": 1
+        },
+        {
+          "name": "Bacon",
+          "amount": 1
+        }
       ]
     },
     {
       "name": "American",
       "ingredients": [
-        "Frankfurt",
-        "Bacon",
-        "Egg"
+        {
+          "name": "Frankfurt",
+          "amount": 1
+        },
+        {
+          "name": "Egg",
+          "amount": 1
+        },
+        {
+          "name": "Bacon",
+          "amount": 1
+        }
       ]
     },
     {
       "name": "Traviata",
       "ingredients": [
-        "Onion",
-        "Bacon",
-        "Sausage"
+        {
+          "name": "Onion",
+          "amount": 1
+        },
+        {
+          "name": "Bacon",
+          "amount": 1
+        },
+        {
+          "name": "Sausage",
+          "amount": 1
+        }
       ]
     },
     {
       "name": "Burger",
       "ingredients": [
-        "Miniburgers",
-        "Bacon",
-        "Egg",
-        "Onion"
+        {
+          "name": "Miniburgers",
+          "amount": 1
+        },
+        {
+          "name": "Egg",
+          "amount": 1
+        },
+        {
+          "name": "Bacon",
+          "amount": 1
+        },
+        {
+          "name": "Onion",
+          "amount": 1
+        }
       ]
     },
     {
       "name": "Castellera",
       "ingredients": [
-        "Onion",
-        "Tuna",
-        "Pepperoni",
-        "Olives"
+        {
+          "name": "Onion",
+          "amount": 1
+        },
+        {
+          "name": "Tuna",
+          "amount": 1
+        },
+        {
+          "name": "Pepperoni",
+          "amount": 1
+        },
+        {
+          "name": "Olives",
+          "amount": 1
+        }
       ]
     },
     {
       "name": "Cowboy",
       "ingredients": [
-        "BBQ Sauce",
-        "Cheddar",
-        "Roquefort",
-        "Bacon"
+        {
+          "name": "BBQ Sauce",
+          "amount": 1
+        },
+        {
+          "name": "Cheddar",
+          "amount": 1
+        },
+        {
+          "name": "Roquefort",
+          "amount": 1
+        },
+        {
+          "name": "Bacon",
+          "amount": 1
+        }
       ]
     },
     {
       "name": "Texas",
       "ingredients": [
-        "BBQ Sauce",
-        "Onion",
-        "Chicken",
-        "Tomato Slices"
+        {
+          "name": "BBQ Sauce",
+          "amount": 1
+        },
+        {
+          "name": "Onion",
+          "amount": 1
+        },
+        {
+          "name": "Chicken",
+          "amount": 1
+        },
+        {
+          "name": "Tomato Slices",
+          "amount": 1
+        }
       ]
     },
     {
       "name": "Coast",
       "ingredients": [
-        "Tuna",
-        "Anchovies",
-        "Prawns",
-        "Pineapple"
+        {
+          "name": "Tuna",
+          "amount": 1
+        },
+        {
+          "name": "Anchovies",
+          "amount": 1
+        },
+        {
+          "name": "Prawns",
+          "amount": 1
+        },
+        {
+          "name": "Pineapple",
+          "amount": 1
+        }
       ]
     },
     {
       "name": "BBQ",
       "ingredients": [
-        "BBQ Sauce",
-        "Beef",
-        "Bacon",
-        "Chicken"
+        {
+          "name": "BBQ Sauce",
+          "amount": 1
+        },
+        {
+          "name": "Beef",
+          "amount": 1
+        },
+        {
+          "name": "Bacon",
+          "amount": 1
+        },
+        {
+          "name": "Chicken",
+          "amount": 1
+        }
       ]
     },
     {
       "name": "Diablo",
       "ingredients": [
-        "Ham",
-        "Beef",
-        "Bacon",
-        "Chicken"
+        {
+          "name": "Ham",
+          "amount": 1
+        },
+        {
+          "name": "Beef",
+          "amount": 1
+        },
+        {
+          "name": "Bacon",
+          "amount": 1
+        },
+        {
+          "name": "Chicken",
+          "amount": 1
+        }
       ]
     },
     {
       "name": "Carbonara",
       "ingredients": [
-        "Carbonara sauce",
-        "Onion",
-        "Mushrooms",
-        "Bacon"
+        {
+          "name": "Carbonara Sauce",
+          "amount": 1
+        },
+        {
+          "name": "Onion",
+          "amount": 1
+        },
+        {
+          "name": "Mushrooms",
+          "amount": 1
+        },
+        {
+          "name": "Bacon",
+          "amount": 1
+        }
       ]
     },
     {
       "name": "Spanish",
       "ingredients": [
-        "Jamon Serrano",
-        "Brie",
-        "Olives",
-        "Mushrooms"
+        {
+          "name": "Jamon Serrano",
+          "amount": 1
+        },
+        {
+          "name": "Brie",
+          "amount": 1
+        },
+        {
+          "name": "Olives",
+          "amount": 1
+        },
+        {
+          "name": "Mushrooms",
+          "amount": 1
+        }
       ]
     },
     {
       "name": "4 Cheeses",
       "ingredients": [
-        "Mozzarella",
-        "Emmental",
-        "Roquefort",
-        "Cheddar"
+        {
+          "name": "Mozzarella",
+          "amount": 1
+        },
+        {
+          "name": "Emmental",
+          "amount": 1
+        },
+        {
+          "name": "Roquefort",
+          "amount": 1
+        },
+        {
+          "name": "Cheddar",
+          "amount": 1
+        }
       ]
     },
     {
       "name": "Pepperoni",
       "ingredients": [
-        "Pepperoni",
-        "Ham",
-        "Beef",
-        "Bacon"
+        {
+          "name": "Pepperoni",
+          "amount": 1
+        },
+        {
+          "name": "Ham",
+          "amount": 1
+        },
+        {
+          "name": "Beef",
+          "amount": 1
+        },
+        {
+          "name": "Bacon",
+          "amount": 1
+        }
       ]
     },
     {
       "name": "Vegetal",
       "ingredients": [
-        "Onion",
-        "Bell Pepper",
-        "Tomato Slices",
-        "Artichoke",
-        "Mushrooms"
+        {
+          "name": "Artichokes",
+          "amount": 1
+        },
+        {
+          "name": "Mushrooms",
+          "amount": 1
+        },
+        {
+          "name": "Tomato Slices",
+          "amount": 1
+        },
+        {
+          "name": "Onion",
+          "amount": 1
+        },
+        {
+          "name": "Bell Pepper",
+          "amount": 1
+        }
       ]
     },
     {
       "name": "6 Cheeses",
       "ingredients": [
-        "Mozarella",
-        "Goat Cheese",
-        "Brie",
-        "Emmental",
-        "Roquefort",
-        "Cheddar"
+        {
+          "name": "Mozzarella",
+          "amount": 1
+        },
+        {
+          "name": "Roquefort",
+          "amount": 1
+        },
+        {
+          "name": "Emmental",
+          "amount": 1
+        },
+        {
+          "name": "Brie",
+          "amount": 1
+        },
+        {
+          "name": "Goat Cheese",
+          "amount": 1
+        },
+        {
+          "name": "Cheddar",
+          "amount": 1
+        }
       ]
     },
     {
       "name": "Mallorca",
       "ingredients": [
-        "Goat Cheese",
-        "Emmental",
-        "Cheddar",
-        "Brie",
-        "Sobrasada",
-        "Olives"
+        {
+          "name": "Olives",
+          "amount": 1
+        },
+        {
+          "name": "Sobrassada",
+          "amount": 1
+        },
+        {
+          "name": "Emmental",
+          "amount": 1
+        },
+        {
+          "name": "Brie",
+          "amount": 1
+        },
+        {
+          "name": "Goat Cheese",
+          "amount": 1
+        },
+        {
+          "name": "Cheddar",
+          "amount": 1
+        }
       ]
     },
     {
       "name": "Carbonara Deluxe",
       "ingredients": [
-        "Carbonara Sauce",
-        "Bacon",
-        "Onion",
-        "Mushrooms",
-        "Goat Cheese",
-        "Honey"
+        {
+          "name": "Goat Cheese",
+          "amount": 1
+        },
+        {
+          "name": "Honey",
+          "amount": 1
+        },
+        {
+          "name": "Mushrooms",
+          "amount": 1
+        },
+        {
+          "name": "Onion",
+          "amount": 1
+        },
+        {
+          "name": "Bacon",
+          "amount": 1
+        },
+        {
+          "name": "Carbonara Sauce",
+          "amount": 1
+        }
       ]
     }
   ],
@@ -196,5 +430,38 @@
       "name": "Beer",
       "minAge": "18"
     }
+  ],
+  "ingredients": [
+    "Ham",
+    "Pineapple",
+    "Chicken",
+    "Bacon",
+    "Frankfurt",
+    "Egg",
+    "Sausage",
+    "Onion",
+    "Miniburgers",
+    "Tuna",
+    "Pepperoni",
+    "Olives",
+    "BBQ Sauce",
+    "Tomato Slices",
+    "Anchioves",
+    "Prawns",
+    "Beef",
+    "Carbonara Sauce",
+    "Mushrooms",
+    "Jamon Serrano",
+    "Brie",
+    "Olives",
+    "Mozzarella",
+    "Emmental",
+    "Roquefort",
+    "Cheddar",
+    "Bell Pepper",
+    "Artichoke",
+    "Goat Cheese",
+    "Sobrassada",
+    "Honey"
   ]
 }

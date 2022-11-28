@@ -1,4 +1,4 @@
-package Model;
+package Model.Proxy;
 
 import Model.Entity.Menu;
 import com.google.gson.Gson;
@@ -8,11 +8,11 @@ import java.io.IOException;
 import java.io.Reader;
 import java.lang.reflect.Type;
 
-/*
+/**
     PATTERN: Proxy RealFile
  */
 public class RealFile implements DataFile{
-    private String filename;
+    private final String filename;
     private Menu menu;
 
     public RealFile(String filename){

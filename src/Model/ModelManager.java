@@ -1,36 +1,45 @@
 package Model;
 
+import Model.Entity.Drink;
 import Model.Entity.Pizza;
-import com.google.gson.Gson;
-import com.google.gson.annotations.Expose;
+import Model.Iterator.CrustRepository;
+import Model.Iterator.DrinkRepository;
+import Model.Iterator.Iterator;
+import Model.Iterator.PizzaRepository;
 
-import java.io.FileReader;
-import java.io.IOException;
-import java.io.Reader;
-import java.lang.reflect.Type;
-import java.util.ArrayList;
+import java.util.spi.CurrencyNameProvider;
 
 public class ModelManager {
-    @Expose
-    private ArrayList<Pizza> pizzas;
-    public ModelManager()  {
+   PizzaRepository pizzaRepository;
+   CrustRepository crustRepository;
+   DrinkRepository drinkRepository;
 
-    }
+   public ModelManager(){
+       pizzaRepository = new PizzaRepository();
+       crustRepository = new CrustRepository();
+       drinkRepository = new DrinkRepository();
+   }
 
-    public void readData(){
-        Pizza pizzas;
-        String filename = ("rsc/datasets/Menu.json");
-        Gson gson = new Gson();
-        ModelManager jsonInfo = new ModelManager();
+   public void printIterators(){
+       for(Iterator iter = pizzaRepository.getIterator(); iter.hasNext();){
+           Pizza pizza = (Pizza) iter.next();
+           System.out.println(pizza.getName());
 
-        // Reading the file
-        try (Reader reader = new FileReader(filename)) {
-            jsonInfo = gson.fromJson(reader, (Type) ModelManager.class);
+       }
 
-        } catch (IOException e) {
-            // Printing an error message informing that it was not possible to read the file
-            System.out.println("There was an error processing the file competicio.json .");
-        }
-        System.out.println();
-    }
+       for(Iterator iter = drinkRepository.getIterator(); iter.hasNext();){
+           Drink pizza = (Drink) iter.next();
+           System.out.println(pizza.getName());
+
+       }
+
+       for(Iterator iter = crustRepository.getIterator(); iter.hasNext();){
+           String crust = (String) iter.next();
+           System.out.println(crust);
+
+       }
+   }
+
+
+
 }
