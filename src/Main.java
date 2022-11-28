@@ -1,3 +1,4 @@
+import Controller.MainController;
 import Model.Composite.CompositeOrder;
 import Model.DataSingleton;
 import Model.Entity.Drink;
@@ -8,32 +9,21 @@ import Model.Iterator.Iterator;
 import Model.Iterator.PizzaRepository;
 import Model.ModelManager;
 import View.MainFrame;
+import View.View;
 
 import javax.swing.*;
 
 public class Main {
     public static void main(String[] args) {
 
-        ModelManager m = new ModelManager();
-        Pizza pizza1 = new Pizza("hola");
-        Pizza pizza2 = new Pizza("hol1");
-        Pizza pizza3 = new Pizza("hol3");
-
-        CompositeOrder compositeOrder = new CompositeOrder();
-        compositeOrder.add(pizza1);
-        compositeOrder.add(pizza2);
-        compositeOrder.add(pizza3);
-
-        CompositeOrder compositeOrder1 = new CompositeOrder();
-        compositeOrder1.add(new Drink("Monster"));
-        compositeOrder.add(compositeOrder1);
-        compositeOrder.print();
+        ModelManager model = new ModelManager();
+        View view = new View();
+        MainController controller = new MainController(view, model);
 
 
-        SwingUtilities.invokeLater(() -> {
-            MainFrame view = new MainFrame();
-            view.setVisible(true);
-        });
+        controller.start();
+
+
     }
 
     //template pattern per llegir les diferents coses
