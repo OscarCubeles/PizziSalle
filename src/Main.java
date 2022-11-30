@@ -19,11 +19,7 @@ public class Main {
         ModelManager model = new ModelManager();
         View view = new View();
         MainController controller = new MainController(view, model);
-
-
         controller.start();
-
-
     }
 
     //template pattern per llegir les diferents coses

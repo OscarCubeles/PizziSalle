@@ -17,6 +17,7 @@ public class CompositeOrder implements Order{
         childOrder.add(order);
     }
 
+
     @Override
     public void print() {
         for (Order order: childOrder) {

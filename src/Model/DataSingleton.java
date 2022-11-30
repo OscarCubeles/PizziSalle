@@ -1,6 +1,7 @@
 package Model;
 
 import Model.Entity.Drink;
+import Model.Entity.Ingredient;
 import Model.Entity.Menu;
 import Model.Entity.Pizza;
 import Model.Proxy.ProxyFile;
@@ -42,7 +43,7 @@ public class DataSingleton {
         return data.getCrust();
     }
 
-    public LinkedList<String> getIngredients(){
+    public LinkedList<Ingredient> getIngredients(){
         return data.getIngredients();
     }
 }

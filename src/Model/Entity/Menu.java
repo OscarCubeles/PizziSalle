@@ -7,7 +7,7 @@ public class Menu {
     LinkedList<String> crust;
     LinkedList<Drink> beverages;
 
-    LinkedList<String> ingredients;
+    LinkedList<Ingredient> ingredients;
 
     public LinkedList<Pizza> getPizzas() {
         return pizzas;
@@ -21,7 +21,7 @@ public class Menu {
         return beverages;
     }
 
-    public LinkedList<String> getIngredients(){
+    public LinkedList<Ingredient> getIngredients(){
         return ingredients;
     }
 }
