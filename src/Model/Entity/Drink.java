@@ -23,6 +23,6 @@ public class Drink implements Order {
 
     @Override
     public void print() {
-        System.out.println("Drink name: " + name);
+        System.out.println("Drink: " + name);
     }
 }

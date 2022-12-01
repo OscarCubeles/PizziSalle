@@ -1,0 +1,18 @@
+[
+  {
+    "delegationName": "Barcelona",
+    "id": 0
+  },
+  {
+    "delegationName": "Tarragona",
+    "id": 1
+  },
+  {
+    "delegationName": "Girona",
+    "id": 2
+  },
+  {
+    "delegationName": "Lleida",
+    "id": 3
+  }
+]

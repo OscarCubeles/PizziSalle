@@ -2,6 +2,8 @@ package Model;
 
 import Model.Composite.CompositeOrder;
 import Model.Composite.Order;
+import Model.DAO.CustomerDAO;
+import Model.Entity.Customer;
 import Model.Entity.Drink;
 import Model.Entity.Ingredient;
 import Model.Entity.Pizza;
@@ -10,17 +12,16 @@ import Model.Iterator.DrinkRepository;
 import Model.Iterator.Iterator;
 import Model.Iterator.PizzaRepository;
 
-import java.util.ArrayList;
 import java.util.LinkedList;
-import java.util.spi.CurrencyNameProvider;
 
 public class ModelManager {
    PizzaRepository pizzaRepository;
    CrustRepository crustRepository;
    DrinkRepository drinkRepository;
    LinkedList<Ingredient> ingredients;
-
    CompositeOrder compositeOrder;
+   Customer customer;
+   CustomerDAO customerDAO;
 
    public ModelManager(){
        pizzaRepository = new PizzaRepository();
@@ -28,10 +29,21 @@ public class ModelManager {
        drinkRepository = new DrinkRepository();
        ingredients = DataSingleton.getInstance().getIngredients();
        compositeOrder = new CompositeOrder();
+       customer = new Customer();
+       customerDAO = new CustomerDAO();
+       System.out.println();
    }
 
-   public void addToOrder(Order order){
+    public CompositeOrder getCompositeOrder() {
+        return compositeOrder;
+    }
+
+    public void addToOrder(Order order){
        compositeOrder.add(order);
+   }
+
+   public void printOrder(){
+       compositeOrder.print();
    }
 
    public void printIterators(){
@@ -79,5 +91,37 @@ public class ModelManager {
            i++;
         }
        return null;
+    }
+
+    public Customer getCustomer() {
+       return new Customer();
+    }
+
+    public void setCustomerName(String name) {
+       customer.setName(name);
+    }
+    public void setCustomerPhone(String phone) {
+        customer.setPhoneNumber(phone);
+    }
+
+    public void setCustomerAddress(String address) {
+       customer.setDeliveryAddress(address);
+    }
+
+    public void storeCustomerDB() {
+        customerDAO.save(customer);
+    }
+
+
+    public void addDelegation(int delegationIndex) {
+       pizzaRepository.addDelegationPizza(delegationIndex);
+    }
+
+    public void setCustomerIsFirstOrder(boolean requestFirstOrder) {
+       customer.setIsFirstOrder(requestFirstOrder);
+    }
+
+    public void setCustomerDelegation(int delegationId){
+       customer.setDelegationID(delegationId);
     }
 }

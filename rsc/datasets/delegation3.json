@@ -1,0 +1,25 @@
+{
+  "name": "Tarragona",
+  "ingredients": [
+    {
+      "name": "Ham",
+      "amount": 1
+    },
+    {
+      "name": "Olives",
+      "amount": 1
+    },
+    {
+      "name": "Onion",
+      "amount": 1
+    },
+    {
+      "name": "Tuna",
+      "amount": 1
+    },
+    {
+      "name": "Prawns",
+      "amount": 1
+    }
+  ]
+}

@@ -46,4 +46,5 @@ public class DataSingleton {
     public LinkedList<Ingredient> getIngredients(){
         return data.getIngredients();
     }
+
 }

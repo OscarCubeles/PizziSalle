@@ -1,6 +1,7 @@
 package Model.Proxy;
 
 import Model.Entity.Menu;
+import Model.Entity.Pizza;
 import com.google.gson.Gson;
 
 import java.io.FileReader;
@@ -15,12 +16,18 @@ public class RealFile implements DataFile{
     private final String filename;
     private Menu menu;
 
-    public RealFile(String filename){
+    private Pizza pizza;
+
+    public RealFile(String filename, boolean isSinglePizza){
          this.filename = filename;
-         loadFile();
+         if(isSinglePizza){
+             loadDelegationPizza();
+         }else{
+            loadPizzasFile();
+         }
     }
 
-    private void loadFile(){
+    private void loadPizzasFile(){
         Gson gson = new Gson();
         // Reading the file
         try (Reader reader = new FileReader(filename)) {
@@ -31,8 +38,24 @@ public class RealFile implements DataFile{
         System.out.println();
     }
 
+    private void loadDelegationPizza(){
+        Gson gson = new Gson();
+        // Reading the file
+        try (Reader reader = new FileReader(filename)) {
+            this.pizza = gson.fromJson(reader, (Type) Pizza.class);
+        } catch (IOException e) {
+            System.out.println("Error. Unable to load pizza data.");
+        }
+        System.out.println();
+    }
+
     @Override
     public Menu getMenu() {
         return menu;
+    }
+
+    @Override
+    public Pizza getDelegationPizza() {
+        return pizza;
     }
 }

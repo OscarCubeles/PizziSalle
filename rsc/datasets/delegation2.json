@@ -1,0 +1,25 @@
+{
+  "name": "Lleida",
+  "ingredients": [
+    {
+      "name": "BBQ Sauce",
+      "amount": 1
+    },
+    {
+      "name": "Beef",
+      "amount": 1
+    },
+    {
+      "name": "Chicken",
+      "amount": 1
+    },
+    {
+      "name": "Mushrooms",
+      "amount": 1
+    },
+    {
+      "name": "Olives",
+      "amount": 1
+    }
+  ]
+}

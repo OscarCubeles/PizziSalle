@@ -18,11 +18,11 @@ public class Ingredient {
     }
 
     public void increaseAmount(){
-        amount++;
+        if(amount < 10) amount++;
     }
 
     public void decreaseAmount(){
-        amount--;
+         if (amount > 0) amount--;
     }
 
 }

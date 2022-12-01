@@ -1,13 +1,16 @@
 package Controller;
 
+import Model.Entity.Drink;
 import Model.Entity.Pizza;
 import Model.ModelManager;
 import View.View;
 
+// TODO: Store the client in the database
+// TODO: request the crust type
+
 public class MainController {
     private boolean exitProgram = false;
     boolean exitCreateOrder = false;
-
     boolean exitEditPizza = false;
     private final View view;
     private final ModelManager model;
@@ -19,7 +22,7 @@ public class MainController {
     public void start(){
         while(!exitProgram){
             switch (view.initialView()) {
-                case 1 -> startOrder();
+                case 1 -> requestCustomerDetails();
                 case 2 -> {
                     exitProgram = true;
                     view.exit();
@@ -28,8 +31,25 @@ public class MainController {
         }
     }
 
+    public void requestCustomerDetails(){
+        model.setCustomerDelegation(generateDelegation());
+        view.showClientView();
+        model.setCustomerName(view.requestCustomerName());
+        model.setCustomerPhone(view.requestCustomerPhone());
+        model.setCustomerAddress(view.requestCustomerAddress());
+        model.setCustomerIsFirstOrder(view.requestFirstOrder());
+        model.storeCustomerDB();
+        startOrder();
+    }
+
+    private int generateDelegation(){
+        int delegation = (int) (Math.random() * 4);
+        model.addDelegation(delegation);
+        return delegation;
+    }
+
     private void startOrder(){
-        // TODO: Generate a random delegation and add the pizza to its iterator :S
+
         while(!exitCreateOrder){
             switch (view.newOrder()) {
                 case 1 -> addPizza();
@@ -42,7 +62,7 @@ public class MainController {
     }
 
     private void viewOrder(){
-
+        view.showOrder(model.getCompositeOrder());
     }
 
     private void selectDelegation(){
@@ -78,8 +98,7 @@ public class MainController {
 
     private void addDrink(){
         String selectedDrink = view.showDrinks(model.getDrinkIterator());
-
-
+        model.addToOrder(new Drink(selectedDrink));
     }
 
     private void getClientDetails(){

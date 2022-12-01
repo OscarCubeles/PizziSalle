@@ -9,8 +9,8 @@ import java.util.List;
  * PATTERN: Composite
  */
 public class Pizza implements Order {
-    private String name;
-    private LinkedList<Ingredient> ingredients;
+    private final String name;
+    private final LinkedList<Ingredient> ingredients;
     private String crustType;
 
     public Pizza(){
@@ -51,11 +51,17 @@ public class Pizza implements Order {
 
     @Override
     public void print() {
-        System.out.println("Pizza name: " + name + "\nIngredients: \n");
-        for (Ingredient ingredient:ingredients) {
-            System.out.println(ingredient.getName());
+        System.out.print("Pizza name: " + name + "\nIngredients: \n");
+        for (int j = 0; j < ingredients.size(); j++) {
+            Ingredient ingredient = ingredients.get(j);
+            System.out.print(ingredient.getName() + " x" + ingredient.getAmount());
+            if(j + 1 < ingredients.size()){
+                System.out.print(", ");
+            }
         }
+        System.out.println("\n");
     }
+
 
     public void removeIngredient(String ingredientName){
         for (Ingredient ingredient: ingredients) {

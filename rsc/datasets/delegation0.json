@@ -1,0 +1,24 @@
+{
+  "name": "Barcelona",
+  "ingredients": [{
+      "name": "Onion",
+      "amount": 1
+    },
+    {
+      "name": "Beef",
+      "amount": 1
+    },
+    {
+      "name": "Brie",
+      "amount": 1
+    },
+    {
+      "name": "Ham",
+      "amount": 1
+    },
+    {
+      "name": "Olives",
+      "amount": 1
+    }
+  ]
+}

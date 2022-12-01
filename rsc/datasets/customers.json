@@ -1,0 +1,25 @@
+{
+  "customers": [
+    {
+      "name": "Oscar",
+      "phoneNumber": "+34601131212",
+      "deliveryAddress": "Barcelona, La Salle",
+      "isFirstOrder": false,
+      "delegationID": 0
+    },
+    {
+      "name": "Juan Ramon Jimenez",
+      "phoneNumber": "+34601131212",
+      "deliveryAddress": "New York, La Salle",
+      "isFirstOrder": true,
+      "delegationID": 1
+    },
+    {
+      "name": "Oscarisn",
+      "phoneNumber": "+34601123456",
+      "deliveryAddress": "Pamplona",
+      "isFirstOrder": false,
+      "delegationID": 1
+    }
+  ]
+}
