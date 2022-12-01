@@ -1,5 +1,5 @@
 # PizziSalle
-The goal of this univeristy project is to implement different design patters with java using MVC as architectural pattern 
+The goal of this university project is to implement different design patters with java using MVC as architectural pattern 
 The design patterns used are:
 * Singleton: To make sure that the data read from the json files is only in one object and not duplicated. Also, to ease its access from different classes.
 * Proxy: To load the data from the json files at the beginning of program execution.
