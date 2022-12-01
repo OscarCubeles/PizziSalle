@@ -2,7 +2,6 @@ package Model.DAO;
 
 import Model.Entity.Customer;
 import Model.Entity.Customers;
-import Model.Entity.Pizza;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 
@@ -13,7 +12,9 @@ import java.io.Reader;
 import java.lang.reflect.Type;
 import java.util.LinkedList;
 import java.util.Optional;
-
+/**
+ * PATTERN: Data Access Object
+ */
 public class CustomerDAO implements DAO{
 
     Customers customers;

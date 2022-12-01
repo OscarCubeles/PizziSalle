@@ -17,17 +17,21 @@ public class View {
 
     public int initialView() {
         String option;
-        do{
             System.out.println("-----------------------------------------------");
             System.out.println("\tWelcome to PizziSalle");
             System.out.println("-----------------------------------------------");
             System.out.println("\t[1] - Start an order");
             System.out.println("\t[2] - Exit");
+        do{
             System.out.print("Select an option: ");
             option = scanner.nextLine();
             System.out.println("");
-
-        }while(option.compareTo("1") != 0 && option.compareTo("2") != 0);
+            if (option.compareTo("1") == 0 || option.compareTo("2") == 0) {
+                break;
+            }else{
+                System.out.println("Invalid input. Enter either 1 or 2.");
+            }
+        }while(true);
         return Integer.parseInt(option);
     }
 
@@ -122,7 +126,7 @@ public class View {
             option = scanner.nextLine();
             System.out.println("");
             if(!isValidDrink(option, drinksCopy)){
-                System.out.println("Invalid option. To select a pizza enter the number next to it.");
+                System.out.println("Invalid option. To select a drink enter the number next to it.");
             }else{
                 break;
             }
@@ -131,7 +135,6 @@ public class View {
     }
 
     private boolean isValidDrink(String drinkName, LinkedList<Drink> drinks){
-        //TODO: Fix drinks not being well compared
         for(Drink drink : drinks){
             if(drinkName.compareTo(drink.getName()) == 0) return true;
         }
@@ -149,12 +152,13 @@ public class View {
             System.out.println("Would you like to: ");
             System.out.println("\t[1] - Add Ingredient");
             System.out.println("\t[2] - Remove Ingredient");
-            System.out.println("\t[3] - Finish Editing Pizza");
+            System.out.println("\t[3] - Change Crust");
+            System.out.println("\t[4] - Finish Editing Pizza");
             System.out.print("Select an option: ");
             option = scanner.nextLine();
             System.out.println("");
         }while(option.compareTo("1") != 0 && option.compareTo("2") != 0
-            && option.compareTo("3") != 0);
+            && option.compareTo("3") != 0 && option.compareTo("4") != 0);
         return Integer.parseInt(option);
     }
 
@@ -245,5 +249,36 @@ public class View {
         System.out.println("-----------------------------------------------");
         System.out.println("\tClient details");
         System.out.println("-----------------------------------------------");
+    }
+
+    public String editCrust(Iterator crustIterator) {
+        String option;
+        LinkedList<String> crustCopy = new LinkedList<>();
+        System.out.println("-----------------------------------------------");
+        System.out.println("\tSelect a Crust");
+        System.out.println("-----------------------------------------------");
+        for(int i = 1; crustIterator.hasNext(); i++){
+            String crust = (String) crustIterator.next();
+            crustCopy.add(crust);
+            System.out.println("\t[" + i + "] - " + crust);
+        }
+        do{
+            System.out.print("Select an option: ");
+            option = scanner.nextLine();
+            System.out.println("");
+            if(!isValidCrust(option, crustCopy)){
+                System.out.println("Invalid option. To select a crust enter the number next to it.");
+            }else{
+                break;
+            }
+        }while(true);
+        return option;
+    }
+
+    private boolean isValidCrust(String currCrust, LinkedList<String> crusts){
+        for(String crust : crusts){
+            if(crust.compareTo(currCrust) == 0) return true;
+        }
+        return false;
     }
 }

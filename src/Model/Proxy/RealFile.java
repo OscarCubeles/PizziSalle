@@ -32,6 +32,7 @@ public class RealFile implements DataFile{
         // Reading the file
         try (Reader reader = new FileReader(filename)) {
             this.menu = gson.fromJson(reader, (Type) Menu.class);
+            System.out.println();
         } catch (IOException e) {
             System.out.println("Error. Unable to load pizza data.");
         }

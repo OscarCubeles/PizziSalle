@@ -5,7 +5,6 @@ import Model.Entity.Pizza;
 import Model.ModelManager;
 import View.View;
 
-// TODO: Store the client in the database
 // TODO: request the crust type
 
 public class MainController {
@@ -56,7 +55,11 @@ public class MainController {
                 case 2 -> addDrink();
                 case 3 -> viewOrder();
                 case 4 -> getClientDetails();
-                case 5 -> exitProgram = true;
+                case 5 -> {
+                    exitProgram = true;
+                    exitCreateOrder = true;
+                    view.exit();
+                }
             }
         }
     }
@@ -84,7 +87,10 @@ public class MainController {
                     String oldIngredient = view.selectIngredient(selectedPizza.getIngredients());
                     selectedPizza.removeIngredient(oldIngredient);
                 }
-                case 3 -> {
+                case 3 ->{
+                    String newCrust = view.editCrust(model.getCrustIterator());
+                }
+                case 4 -> {
                     exitEditPizza = true;
                 }
             }

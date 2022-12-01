@@ -29,4 +29,8 @@ public class Customer {
     public void setDelegationID(int delegationID) {
         this.delegationID = delegationID;
     }
+
+    public String getName() {
+        return name;
+    }
 }

@@ -109,6 +109,11 @@ public class ModelManager {
     }
 
     public void storeCustomerDB() {
+        for (Customer customerDB: customerDAO.getAll()) {
+            if(customerDB.getName().compareTo(customer.getName()) == 0){
+                return;
+            }
+        }
         customerDAO.save(customer);
     }
 
