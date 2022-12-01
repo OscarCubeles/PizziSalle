@@ -15,6 +15,7 @@ public class View {
 
     private final Scanner scanner = new Scanner(System.in);
 
+    @SuppressWarnings("SpellCheckingInspection")
     public int initialView() {
         String option;
             System.out.println("-----------------------------------------------");
@@ -25,7 +26,7 @@ public class View {
         do{
             System.out.print("Select an option: ");
             option = scanner.nextLine();
-            System.out.println("");
+            System.out.println();
             if (option.compareTo("1") == 0 || option.compareTo("2") == 0) {
                 break;
             }else{
@@ -48,7 +49,7 @@ public class View {
             System.out.println("\t[5] - Exit");
             System.out.print("Select an option: ");
             option = scanner.nextLine();
-            System.out.println("");
+            System.out.println();
         }while(option.compareTo("1") != 0 && option.compareTo("2") != 0
                 && option.compareTo("3") != 0 && option.compareTo("4") != 0 && option.compareTo("5") != 0);
         return Integer.parseInt(option);
@@ -73,7 +74,7 @@ public class View {
         System.out.println("\tYour Order");
         System.out.println("-----------------------------------------------");
         order.print();
-        System.out.println("");
+        System.out.println();
     }
 
     public int showPizzas(Iterator iterator){
@@ -92,7 +93,7 @@ public class View {
         do{
             System.out.print("Select an option: ");
             option = scanner.nextLine();
-            System.out.println("");
+            System.out.println();
             if(!isPizzaValid(i, option)){
                 System.out.println("Invalid option. To select a pizza enter the number next to it.");
             }else{
@@ -124,7 +125,7 @@ public class View {
         do{
             System.out.print("Select an option: ");
             option = scanner.nextLine();
-            System.out.println("");
+            System.out.println();
             if(!isValidDrink(option, drinksCopy)){
                 System.out.println("Invalid option. To select a drink enter the number next to it.");
             }else{
@@ -156,7 +157,7 @@ public class View {
             System.out.println("\t[4] - Finish Editing Pizza");
             System.out.print("Select an option: ");
             option = scanner.nextLine();
-            System.out.println("");
+            System.out.println();
         }while(option.compareTo("1") != 0 && option.compareTo("2") != 0
             && option.compareTo("3") != 0 && option.compareTo("4") != 0);
         return Integer.parseInt(option);
@@ -177,7 +178,7 @@ public class View {
         do{
             System.out.print("Select an option: ");
             option = scanner.nextLine();
-            System.out.println("");
+            System.out.println();
             if(!isValidIngredient(option, ingredients)){
                 System.out.println("Invalid ingredient. Enter the name of an ingredient from the list.");
             }else{
@@ -193,10 +194,6 @@ public class View {
             if(ingredientName.compareTo(ingredient.getName()) == 0) return true;
         }
         return false;
-    }
-
-    public String removeIngredient(Pizza pizza){
-        return "";
     }
 
     public String requestCustomerName() {
@@ -235,7 +232,7 @@ public class View {
         do{
             System.out.print("Select an option: ");
             option = scanner.nextLine();
-            System.out.println("");
+            System.out.println();
             if (option.compareTo("1") == 0 || option.compareTo("2") == 0) {
                 break;
             }else{
@@ -265,7 +262,7 @@ public class View {
         do{
             System.out.print("Select an option: ");
             option = scanner.nextLine();
-            System.out.println("");
+            System.out.println();
             if(!isValidCrust(option, crustCopy)){
                 System.out.println("Invalid option. To select a crust enter the number next to it.");
             }else{
