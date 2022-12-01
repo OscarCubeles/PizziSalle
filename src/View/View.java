@@ -1,10 +1,12 @@
 package View;
 
 import Model.Composite.CompositeOrder;
+import Model.Entity.Customer;
 import Model.Entity.Drink;
 import Model.Entity.Ingredient;
 import Model.Entity.Pizza;
 import Model.Iterator.Iterator;
+import org.jetbrains.annotations.NotNull;
 
 import java.util.LinkedList;
 import java.util.Scanner;
@@ -56,7 +58,7 @@ public class View {
     }
 
     public void exit(){
-        System.out.println("Bye!");
+        System.out.println("\nBye!\n");
     }
 
     public void showPizzaIngredients(Pizza pizza){
@@ -111,7 +113,7 @@ public class View {
         }
     }
 
-    public String showDrinks(Iterator iterator){
+    public String showDrinks(@NotNull Iterator iterator, Customer customer){
         String option;
         LinkedList<Drink> drinksCopy = new LinkedList<>();
         System.out.println("-----------------------------------------------");
@@ -119,15 +121,17 @@ public class View {
         System.out.println("-----------------------------------------------");
         for(int i = 1; iterator.hasNext(); i++){
             Drink drink = (Drink)iterator.next();
-            drinksCopy.add(new Drink(drink.getName()));
+            drinksCopy.add(new Drink(drink.getName(), drink.getMinAge()));
             System.out.println("\t[" + i + "] - " + drink.getName());
         }
         do{
-            System.out.print("Select an option: ");
+            System.out.print("Enter the drink name: ");
             option = scanner.nextLine();
             System.out.println();
             if(!isValidDrink(option, drinksCopy)){
                 System.out.println("Invalid option. To select a drink enter the number next to it.");
+            }else if(isUnderage(customer.getAge(), option, drinksCopy)){
+                System.out.println("Invalid option. You must be an adult to get this drink.");
             }else{
                 break;
             }
@@ -135,14 +139,21 @@ public class View {
         return option;
     }
 
-    private boolean isValidDrink(String drinkName, LinkedList<Drink> drinks){
+    private boolean isUnderage(int age, String drinkName, @NotNull LinkedList<Drink> drinks){
+        for(Drink drink : drinks){
+            if(drinkName.compareTo(drink.getName()) == 0 && age > drink.getMinAge()) return false;
+        }
+        return true;
+    }
+
+    private boolean isValidDrink(String drinkName, @NotNull LinkedList<Drink> drinks){
         for(Drink drink : drinks){
             if(drinkName.compareTo(drink.getName()) == 0) return true;
         }
         return false;
     }
 
-    public int showSelectedPizza(Pizza pizza){
+    public int showSelectedPizza(@NotNull Pizza pizza){
         String option;
         do{
             System.out.println("-----------------------------------------------");
@@ -176,7 +187,7 @@ public class View {
             i++;
         }
         do{
-            System.out.print("Select an option: ");
+            System.out.print("Enter the ingredient name: ");
             option = scanner.nextLine();
             System.out.println();
             if(!isValidIngredient(option, ingredients)){
@@ -187,7 +198,6 @@ public class View {
         }while(true);
         return option;
     }
-
 
     private boolean isValidIngredient(String ingredientName, LinkedList<Ingredient> ingredients){
         for (Ingredient ingredient: ingredients) {
@@ -222,6 +232,23 @@ public class View {
     public String requestCustomerAddress() {
         System.out.print("Enter your address: ");
         return scanner.nextLine();
+    }
+
+    public int requestCustomerAge() {
+        String input;
+        int age;
+        do{
+            System.out.print("Enter your age: ");
+            input = scanner.nextLine();
+            try{
+                age = Integer.parseInt(input);
+                break;
+            }catch (NumberFormatException e){
+                System.out.println("Invalid age. Please enter a number");
+            }
+
+        }while(true);
+        return age;
     }
 
     public boolean requestFirstOrder() {
@@ -260,11 +287,11 @@ public class View {
             System.out.println("\t[" + i + "] - " + crust);
         }
         do{
-            System.out.print("Select an option: ");
+            System.out.print("Enter crust name: ");
             option = scanner.nextLine();
             System.out.println();
             if(!isValidCrust(option, crustCopy)){
-                System.out.println("Invalid option. To select a crust enter the number next to it.");
+                System.out.println("Invalid option. To select a crust enter its name.");
             }else{
                 break;
             }
@@ -277,5 +304,34 @@ public class View {
             if(crust.compareTo(currCrust) == 0) return true;
         }
         return false;
+    }
+
+    public void showOrderResume(CompositeOrder compositeOrder, Customer customer) {
+        System.out.println("-----------------------------------------------");
+        System.out.println("\tOrder Summary");
+        System.out.println("-----------------------------------------------");
+        compositeOrder.print();
+        System.out.println("-----------------------------------------------");
+        System.out.println("\tCustomer Summary");
+        System.out.println("-----------------------------------------------");
+        System.out.println("Customer name: " + customer.getName());
+        System.out.println("Customer phone: " + customer.getPhoneNumber());
+        System.out.println("Customer address: " + customer.getDeliveryAddress());
+        System.out.print("Customer first order: ");
+        if(customer.isFirstOrder()){
+            System.out.println("Yes");
+        }else{
+            System.out.println("No");
+        }
+        switch (customer.getDelegationID()) {
+            case 0 -> System.out.println("Customer ordered in: Barcelona");
+            case 2 -> System.out.println("Customer ordered in: Tarragona");
+            case 1 -> System.out.println("Customer ordered in: Girona");
+            case 3 -> System.out.println("Customer ordered in: Lleida");
+        }
+    }
+
+    public void showMissingIngredients() {
+        System.out.println("The Pizza has no more ingredients to remove.");
     }
 }

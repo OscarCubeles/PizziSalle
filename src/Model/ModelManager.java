@@ -4,7 +4,6 @@ import Model.Composite.CompositeOrder;
 import Model.Composite.Order;
 import Model.DAO.CustomerDAO;
 import Model.Entity.Customer;
-import Model.Entity.Drink;
 import Model.Entity.Ingredient;
 import Model.Entity.Pizza;
 import Model.Iterator.CrustRepository;
@@ -31,7 +30,6 @@ public class ModelManager {
        compositeOrder = new CompositeOrder();
        customer = new Customer();
        customerDAO = new CustomerDAO();
-       System.out.println();
    }
 
     public CompositeOrder getCompositeOrder() {
@@ -42,29 +40,7 @@ public class ModelManager {
        compositeOrder.add(order);
    }
 
-   public void printOrder(){
-       compositeOrder.print();
-   }
-
-   public void printIterators(){
-       for(Iterator iter = pizzaRepository.getIterator(); iter.hasNext();){
-           Pizza pizza = (Pizza) iter.next();
-           System.out.println(pizza.getName());
-       }
-
-       for(Iterator iter = drinkRepository.getIterator(); iter.hasNext();){
-           Drink pizza = (Drink) iter.next();
-           System.out.println(pizza.getName());
-       }
-
-       for(Iterator iter = crustRepository.getIterator(); iter.hasNext();){
-           String crust = (String) iter.next();
-           System.out.println(crust);
-
-       }
-   }
-
-   public Iterator getPizzaIterator(){
+    public Iterator getPizzaIterator(){
        return pizzaRepository.getIterator();
    }
 
@@ -94,7 +70,7 @@ public class ModelManager {
     }
 
     public Customer getCustomer() {
-       return new Customer();
+       return customer;
     }
 
     public void setCustomerName(String name) {
@@ -117,7 +93,6 @@ public class ModelManager {
         customerDAO.save(customer);
     }
 
-
     public void addDelegation(int delegationIndex) {
        pizzaRepository.addDelegationPizza(delegationIndex);
     }
@@ -128,5 +103,9 @@ public class ModelManager {
 
     public void setCustomerDelegation(int delegationId){
        customer.setDelegationID(delegationId);
+    }
+
+    public void setCustomerAge(int age) {
+       customer.setAge(age);
     }
 }

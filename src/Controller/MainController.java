@@ -5,7 +5,6 @@ import Model.Entity.Pizza;
 import Model.ModelManager;
 import View.View;
 
-// TODO: request the crust type
 
 public class MainController {
     private boolean exitProgram = false;
@@ -35,6 +34,7 @@ public class MainController {
         view.showClientView();
         model.setCustomerName(view.requestCustomerName());
         model.setCustomerPhone(view.requestCustomerPhone());
+        model.setCustomerAge(view.requestCustomerAge());
         model.setCustomerAddress(view.requestCustomerAddress());
         model.setCustomerIsFirstOrder(view.requestFirstOrder());
         model.storeCustomerDB();
@@ -48,7 +48,6 @@ public class MainController {
     }
 
     private void startOrder(){
-
         while(!exitCreateOrder){
             switch (view.newOrder()) {
                 case 1 -> addPizza();
@@ -68,13 +67,8 @@ public class MainController {
         view.showOrder(model.getCompositeOrder());
     }
 
-    private void selectDelegation(){
-
-    }
-
     private void addPizza(){
         int pizzaIndex = view.showPizzas(model.getPizzaIterator());
-
         Pizza selectedPizza = model.getPizza(pizzaIndex);
         while(!exitEditPizza){
             switch (view.showSelectedPizza(selectedPizza)) {
@@ -83,16 +77,15 @@ public class MainController {
                     selectedPizza.addIngredient(newIngredient);
                 }
                 case 2 -> {
-                    // Pass the list of ingredients of the pizza
-                    String oldIngredient = view.selectIngredient(selectedPizza.getIngredients());
-                    selectedPizza.removeIngredient(oldIngredient);
+                    if(selectedPizza.hasIngredients()){
+                        String oldIngredient = view.selectIngredient(selectedPizza.getIngredients());
+                        selectedPizza.removeIngredient(oldIngredient);
+                    }else{
+                        view.showMissingIngredients();
+                    }
                 }
-                case 3 ->{
-                    String newCrust = view.editCrust(model.getCrustIterator());
-                }
-                case 4 -> {
-                    exitEditPizza = true;
-                }
+                case 3 -> selectedPizza.setCrustType(view.editCrust(model.getCrustIterator()));
+                case 4 -> exitEditPizza = true;
             }
         }
         exitEditPizza = false;
@@ -100,18 +93,18 @@ public class MainController {
         System.out.println();
     }
 
-
-
     private void addDrink(){
-        String selectedDrink = view.showDrinks(model.getDrinkIterator());
+        String selectedDrink = view.showDrinks(model.getDrinkIterator(), model.getCustomer());
         model.addToOrder(new Drink(selectedDrink));
     }
 
     private void getClientDetails(){
         exitCreateOrder = true;
+        exitProgram = true;
+        exitEditPizza = true;
+        view.showOrderResume(model.getCompositeOrder(), model.getCustomer());
+        view.exit();
     }
-
-
 }
 
 

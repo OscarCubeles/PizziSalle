@@ -6,11 +6,15 @@ import Model.Composite.Order;
  */
 public class Drink implements Order {
     private final String name;
-    private final int minAge;
+    private int minAge;
 
     public Drink(String name) {
         this.name = name;
-        this.minAge = 0;
+    }
+
+    public Drink(String name, int minAge){
+        this.name = name;
+        this.minAge = minAge;
     }
 
     public String getName() {

@@ -3,8 +3,6 @@ package Model.Iterator;
 import Model.DataSingleton;
 import Model.Entity.Pizza;
 import Model.Proxy.ProxyFile;
-
-import java.net.Proxy;
 import java.util.LinkedList;
 /**
  *     PATTERN: Iterator

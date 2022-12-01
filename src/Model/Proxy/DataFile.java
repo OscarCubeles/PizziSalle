@@ -4,7 +4,7 @@ import Model.Entity.Menu;
 import Model.Entity.Pizza;
 
 /**
-    PATTERN: Proxy file
+    PATTERN: Proxy
  */
 public interface DataFile {
     Menu getMenu();

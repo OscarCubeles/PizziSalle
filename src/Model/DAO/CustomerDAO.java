@@ -4,7 +4,6 @@ import Model.Entity.Customer;
 import Model.Entity.Customers;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
-
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
@@ -16,7 +15,6 @@ import java.util.Optional;
  * PATTERN: Data Access Object
  */
 public class CustomerDAO implements DAO{
-
     Customers customers;
 
     public CustomerDAO() {
@@ -29,7 +27,6 @@ public class CustomerDAO implements DAO{
         }
 
     }
-
 
     @Override
     public Optional<Customer> get(String name) {

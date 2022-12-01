@@ -4,13 +4,11 @@ import Model.Entity.Menu;
 import Model.Entity.Pizza;
 
 /**
-    PATTERN: Proxy ProxyFile
+    PATTERN: Proxy
  */
 public class ProxyFile implements DataFile {
-
     private final String filename;
     private RealFile realFile;
-
 
     public ProxyFile(String filename){
         this.filename = filename;

@@ -14,7 +14,6 @@ public class CrustRepository implements Container{
     }
 
     private class CrustIterator implements Iterator{
-
         int index;
 
         @Override

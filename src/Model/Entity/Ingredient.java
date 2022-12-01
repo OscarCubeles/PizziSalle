@@ -1,7 +1,7 @@
 package Model.Entity;
 
 public class Ingredient {
-    private String name;
+    private final String name;
     private int amount;
 
     public Ingredient(String name) {

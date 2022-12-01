@@ -27,10 +27,6 @@ public class DataSingleton {
         return dbObject;
     }
 
-    public Menu getData() {
-        return data;
-    }
-
     public LinkedList<Pizza> getPizzas(){
         return data.getPizzas();
     }
